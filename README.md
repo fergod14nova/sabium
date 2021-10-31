@@ -2,6 +2,17 @@
 Prova técnica para o programa de formação JAVA
 
 ## QUESTÕES
+::x:: Fiz o melhor que pude! Vamos lá!
+
+### Etapas concluídas
+[] Questão 1
+[] Questão 2
+[] Questão 3
+[] Questão 4
+[] Questão 5
+
+---
+
 1. Escreva um programa que seja capaz de identificar se uma palavra é palíndromo ou não. Uma palavra palíndromo é a palavra que é possível se ler da esquerda para a direita e da direita para esquerda e tem o mesmo significado. Exemplo: ovo, reviver;
 
 ---
@@ -18,7 +29,9 @@ Escreva um programa que exiba todas as classes de anagramas e suas palavras a pa
 
 ---
 
-4. <img src="https://sesuite.sabium.com.br/se/v59510/temp/5a6e3c18.png">
+4. ...
+
+<img src="https://sesuite.sabium.com.br/se/v59510/temp/5a6e3c18.png">
 
 ---
 
@@ -28,12 +41,13 @@ Exemplo de texto contido em arquivo txt
 Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing."
 Resultado
 Total de letras: 283
-Percentuais:
-"a" = 9,54%
-"b" = 1,06%
-"c" = 4,24%
-...
-"z" = 0,00%
+- Percentuais:
+- "a" = 9,54%
+- "b" = 1,06%
+- "c" = 4,24%
+- ...
+- "z" = 0,00%
 
 ---
+
 
