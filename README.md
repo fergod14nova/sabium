@@ -5,11 +5,11 @@ Prova técnica para o programa de formação JAVA
 ::x:: Fiz o melhor que pude! Vamos lá!
 
 ### Etapas concluídas
-[] Questão 1
-[] Questão 2
-[] Questão 3
-[] Questão 4
-[] Questão 5
+[]: Questão 1
+[]: Questão 2
+[]: Questão 3
+[]: Questão 4
+[]: Questão 5
 
 ---
 
@@ -41,13 +41,13 @@ Exemplo de texto contido em arquivo txt
 Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing."
 Resultado
 Total de letras: 283
-- Percentuais:
-- "a" = 9,54%
-- "b" = 1,06%
-- "c" = 4,24%
-- ...
-- "z" = 0,00%
+> Percentuais:
+> "a" = 9,54%
+> "b" = 1,06%
+> "c" = 4,24%
+> ...
+> "z" = 0,00%
 
 ---
-
+By Jorge Luiz de Alencar
 
