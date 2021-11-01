@@ -1,15 +1,23 @@
 # SABIUM SISTEMAS
 Prova técnica para o programa de formação JAVA
 
+## Instruções para uso do GIT
+- Git Init --> Inicia o Git
+- Git Status --> Verifica alterações no rep.
+- Git Add * --> Adiciona todos os arquivos na área de transf.
+- Git Commit -m "Desc." --> Pega os arquivos na área de transf. e coloca em um pacote "commit"
+- Git Push --> Envia para o repositório configurado
+
+
 ## QUESTÕES
 ::x:: Fiz o melhor que pude! Vamos lá!
 
 ### Etapas concluídas
-[ ] :Questão 1
-[ ] :Questão 2
-[ ] :Questão 3
-[ ] :Questão 4
-[ ] :Questão 5
+-[ ] :Questão 1
+-[ ] :Questão 2
+-[ ] :Questão 3
+-[ ] :Questão 4
+-[ ] :Questão 5
 
 ---
 
