@@ -13,11 +13,11 @@ Prova técnica para o programa de formação JAVA
 ::x:: Fiz o melhor que pude! Vamos lá!
 
 ### Etapas concluídas
--[] :Questão 1
--[] :Questão 2
--[] :Questão 3
--[] :Questão 4
--[] :Questão 5
+- [ ] :Questão 1
+- [ ] :Questão 2
+- [ ] :Questão 3
+- [ ] :Questão 4
+- [ ] :Questão 5
 
 ---
 
