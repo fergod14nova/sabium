@@ -83,13 +83,35 @@ Percentuais: "a" = 9,54% "b" = 1,06% "c" = 4,24% ... "z" = 0,00%
     </form>
 
     <?php
-    
+   
     $dir = "uploads/";
+    // Definindo a variável e verificando se a mesma foi configurada, caso não seja, o seu valor será null
     $arquivo = isset($_FILES["arquivoTxt"]) ? $_FILES["arquivoTxt"] : null ;
 
+    // Verificando se a variável está definida
     if(!empty($arquivo)){
+      // movendo o arquivo para a pasta uploads
       if(move_uploaded_file($arquivo["tmp_name"], "$dir".$arquivo["name"])){
-        echo "Arquivo enviado com sucesso!";
+        echo "Arquivo enviado com sucesso! <br>";
+
+        $endereço = "uploads/".$arquivo['name']; //caminho do arquivo
+        $arquivoLocal = file_get_contents($endereço); //abrindo o arquivo na memória do php
+    
+        // colocando tudo em minúsculo, usando ostr_replace para remover caracteres e usando um array para armazenar os caracteres que eu quero remover da string
+        $arquivoTratado = strtolower(str_replace(array('@','1','2','3','4','5','6','7','8','9','!','?','.',',',' ', "\t", "\n"), '', $arquivoLocal));
+
+        echo "<br> Arquivo Original Tratado > ".$arquivoTratado."<br>";
+        
+        // Array que contém os valores de percentagem
+        
+
+        for($valorAscii = ord("a"); $valorAscii <= ord("z"); $valorAscii++){
+           $buscaString = substr_count($arquivoTratado,chr($valorAscii));
+           $caractere = chr($valorAscii);
+
+        }
+          
+
       } else {
         echo "Nenhum arquivo selecionado";
       }
