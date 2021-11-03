@@ -66,39 +66,34 @@ Percentuais: "a" = 9,54% "b" = 1,06% "c" = 4,24% ... "z" = 0,00%
   <div class="container">
     <!-- Repositório do GitHub -->
     <a href="https://github.com/fergod14nova/sabium" target="_blank" class="btn btn-primary btn-sm">Ir para Repositório</a>
+    <a href="Questao1.html" class="btn btn-success btn-sm">Questão1</a>
+    <a href="Questao2.html" class="btn btn-success btn-sm">Questão2</a>
+    <a href="Questao3.html" class="btn btn-success btn-sm">Questão3</a>
     <a href="Questao4.html" class="btn btn-success btn-sm">Questão4</a>
+    <a href="Questao5.php" class="btn btn-success btn-sm">Questão5</a>
     <br><br>
     <!-- Repositório do GitHub -->
 
     <!-- Formulário de envio de arquivos -->
     <form enctype="multipart/form-data" action="#" method="POST" class="form-control">
-
-    <!-- MAX_FILE_SIZE deve preceder o campo input -->
-    <input type="hidden" name="MAX_FILE_SIZE" value="30000" class="btn btn-dark btn-lg"/>
-    <!-- O Nome do elemento input determina o nome da array $_FILES -->
-    Enviar esse arquivo: <input name="userfile" type="file" />
-    <input type="submit" value="Enviar arquivo" class="btn btn-outline-dark btn-md"/>
+      <div class="form-group row">
+        <input name="arquivoTxt" type="file" class="form-control"/>
+        <input type="submit" value="Enviar arquivo" class="btn btn-outline-dark btn-md"/>
+      </div>
     </form>
 
     <?php
-    //  Definindo variável global -- Indicando aonde ficará salvo os arquivos enviados
-    $uploaddir = 'C/xampp/tmp/';
-    $uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
+    
+    $dir = "uploads/";
+    $arquivo = isset($_FILES["arquivoTxt"]) ? $_FILES["arquivoTxt"] : null ;
 
-    $destino = "/htdocs/sabium/uploads/";
-
-    echo '<pre>';
-    if (move_uploaded_file($uploadfile,$destino)) {
-        echo "Arquivo válido e enviado com sucesso.\n";
-    } else {
-        echo "Possível ataque de upload de arquivo!\n";
-        echo $_FILES['error'];
+    if(!empty($arquivo)){
+      if(move_uploaded_file($arquivo["tmp_name"], "$dir".$arquivo["name"])){
+        echo "Arquivo enviado com sucesso!";
+      } else {
+        echo "Nenhum arquivo selecionado";
+      }
     }
-
-    echo 'Aqui está mais informações de debug:';
-    print_r($_FILES);
-
-    print "</pre>";
       
     ?>
   </div>
