@@ -92,39 +92,36 @@ Percentuais: "a" = 9,54% "b" = 1,06% "c" = 4,24% ... "z" = 0,00%
     if(!empty($arquivo)){
       // movendo o arquivo para a pasta uploads
       if(move_uploaded_file($arquivo["tmp_name"], "$dir".$arquivo["name"])){
-        echo "Arquivo enviado com sucesso! <br>";
+        echo "Arquivo enviado com sucesso! <br><br> <hr>";
 
         $endereço = "uploads/".$arquivo['name']; //caminho do arquivo
         $arquivoLocal = file_get_contents($endereço); //abrindo o arquivo na memória do php
     
         // pegando a string que contém o arquivo txt e medido o seu tamanho
-        $len = strlen($arquivoLocal);
+        $stringTamanho = strlen($arquivoLocal);
 
         // Criando o array para armazenar os valores
-        $count = array();
-
-        for ($i = 0; $i < $len; $i++) {
-            // pega um caractere de cada vez
-            $c = strtolower($arquivoLocal[$i]);
+        $stringArquivo = array();
+        
+        for ($contador = 0; $contador < $stringTamanho; $contador++) {
+            // pega um caractere de cada vez e o coloca em minúsculo
+            $char = strtolower($arquivoLocal[$contador]);
 
             // se for letra, contabiliza
-            if ('a' <= $c && $c <= 'z') {
+            if ('a' <= $char && $char <= 'z') {
                 // se a letra ainda não foi contabilizada, adiciona no array
-                if (! array_key_exists($c, $count)) {
-                    $count[$c] = 1;
+                if (! array_key_exists($char, $stringArquivo)) {
+                    $stringArquivo[$char] = 1;
                 } else {
                     // se a letra já existe no array, aumenta o contador
-                    $count[$c]++;
+                    $stringArquivo[$char]++;
                 }
             }
             // se não for letra, não faz nada e vai para o próximo caractere
         }
-        
-        // Exibindo dados
-        foreach ($count as $char => $repeticao) {
-          echo "<br> A letra <strong>".$char."</strong> se repete ".$repeticao." vezes";
-        }
 
+        print_r($stringArquivo);
+        
       } else {
         echo "Nenhum arquivo selecionado";
       }
