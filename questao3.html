@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="file" id="arquivo" class="form-control-file mb-5 mt-5" onChange="handleFile(this.files)">
+
+
+  <script>
+
+    function handleFile(files) {
+        document.querySelector('#type').innerText = files[0].type;
+        document.querySelector('#size').innerText = files[0].size;
+
+        if (files[0].type == 'text/plain' || files[0].type == '') {
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                console.log(event);
+                let data = event.target.result;
+                document.querySelector("#texto").value = data;
+            };
+            reader.readAsText(files[0]);
+        }
+
+    }
+
+</script>
+</body>
+</html>
