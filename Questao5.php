@@ -108,9 +108,12 @@ Percentuais: "a" = 9,54% "b" = 1,06% "c" = 4,24% ... "z" = 0,00%
         for($valorAscii = ord("a"); $valorAscii <= ord("z"); $valorAscii++){
            $buscaString = substr_count($arquivoTratado,chr($valorAscii));
            $caractere = chr($valorAscii);
-
-        }
           
+          
+          
+        }
+          print_r($percentual);
+          var_dump($percentual);
 
       } else {
         echo "Nenhum arquivo selecionado";
