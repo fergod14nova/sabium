@@ -92,29 +92,45 @@ Percentuais: "a" = 9,54% "b" = 1,06% "c" = 4,24% ... "z" = 0,00%
     if(!empty($arquivo)){
       // movendo o arquivo para a pasta uploads
       if(move_uploaded_file($arquivo["tmp_name"], "$dir".$arquivo["name"])){
-        echo "Arquivo enviado com sucesso! <br>";
-
+        echo "Arquivo enviado com sucesso! <br><hr>";
+        
         $endereço = "uploads/".$arquivo['name']; //caminho do arquivo
         $arquivoLocal = file_get_contents($endereço); //abrindo o arquivo na memória do php
-    
-        // colocando tudo em minúsculo, usando ostr_replace para remover caracteres e usando um array para armazenar os caracteres que eu quero remover da string
-        $arquivoTratado = strtolower(str_replace(array('@','1','2','3','4','5','6','7','8','9','!','?','.',',',' ', "\t", "\n"), '', $arquivoLocal));
-
-        echo "<br> Arquivo Original Tratado > ".$arquivoTratado."<br>";
         
-        // Array que contém os valores de percentagem
+        $stringTamanho = strlen($arquivoLocal);
+        // Criando o array para armazenar os valores
+        $stringArquivo = array();
         
+        for ($contador = 0; $contador < $stringTamanho; $contador++) {
+            // pega um caractere de cada vez e o coloca em minúsculo
+            $char = strtolower($arquivoLocal[$contador]);
 
-        for($valorAscii = ord("a"); $valorAscii <= ord("z"); $valorAscii++){
-           $buscaString = substr_count($arquivoTratado,chr($valorAscii));
-           $caractere = chr($valorAscii);
-          
-          
-          
+            // se for letra, contabiliza
+            if ('a' <= $char && $char <= 'z') {
+                // se a letra ainda não foi contabilizada, adiciona no array
+                if (! array_key_exists($char, $stringArquivo)) {
+                    $stringArquivo[$char] = 1;
+
+                } else {
+                    // se a letra já existe no array, aumenta o contador
+                    $stringArquivo[$char]++;
+                    
+                }
+            }
+            // se não for letra, não faz nada e vai para o próximo caractere
+            else{
+              
+           }
+           
         }
-          print_r($percentual);
-          var_dump($percentual);
+        asort($stringArquivo); //colocando em ordem crescente
+        $totalDeValores = array_sum($stringArquivo);          
 
+        echo "<pre>"; 
+        print_r($stringArquivo);
+        echo "<pre>";
+        
+        echo "<br> A soma de todos os elementos é: ".$totalDeValores;
       } else {
         echo "Nenhum arquivo selecionado";
       }
