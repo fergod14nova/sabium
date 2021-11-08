@@ -14,7 +14,7 @@ Prova técnica para o programa de formação JAVA
 
 ### Etapas concluídas
 - [x] :Questão 1
-- [ ] :Questão 2
+- [x] :Questão 2
 - [ ] :Questão 3
 - [x] :Questão 4
 - [x] :Questão 5
